@@ -295,7 +295,8 @@ class FtpClient implements Countable
 
         if (!$recursive) {
             foreach ($files as $file) {
-                $result[] = $directory.'/'.$file;
+//                $result[] = $directory.'/'.$file; // haidm change
+                $result[] = $file;
             }
 
             // working with the reference (behavior of several PHP sorting functions)
@@ -321,7 +322,7 @@ class FtpClient implements Countable
         };
 
         foreach ($files as $file) {
-            $file = $directory.'/'.$file;
+//            $file = $directory.'/'.$file; // haidm remove
 
             // if contains the root path (behavior of the recursivity)
             if (0 === strpos($file, $directory, $dir_len)) {
